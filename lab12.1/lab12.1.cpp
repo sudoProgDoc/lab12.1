@@ -18,7 +18,7 @@ void ladder(float **a)
                 a[i][j] = a[v][j];
                 a[v][j] = z;
             }
-        for (k = i + 1; k < n; k++)//
+        for (k = i + 1; k < n; k++)//проходим только по строкам которые еще не заняли нужные места в лесенке
         {
             z = a[k][i] / a[i][i];//находим коэффициент разности i-х элементов строк
             for (j = i; j <= n; j++)
@@ -45,12 +45,8 @@ int main()
 
     for (i = 0; i < m; i++)
     {
-        for (j = 0; j <= n; j++)
-        {
-            fprintf(fm, "%f", a[i][j]);
-            fprintf(fm, " ");
-        }
+        for (j = 0; j <= n; j++) fprintf(fm, "%f%c", a[i][j], ' ');
         fprintf(fm, "\n");
     }
-
+    fprintf(fm, "\n");
 }
